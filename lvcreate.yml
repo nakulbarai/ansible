@@ -1,0 +1,24 @@
+---
+- hosts: 172.31.7.4
+  user: root
+  tasks:
+  - name: vgcreate
+     lvg:
+            vg: vgdata
+            pvs: /dev/xvdf, /dev/xvdg
+
+  - name: create LV
+    lovl:
+            vg: vgdata
+            lv: dataone
+
+  - name: create file system
+    filesystem:
+            fstype: ext3
+            dev: /dev/vgdata/dataone
+
+
+  - name: mount logical volume
+    mount:
+             name: /lvdata
+             src: /dev/vgdata/dataone

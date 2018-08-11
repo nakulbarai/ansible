@@ -1,0 +1,22 @@
+---
+- hosts: 172.31.5.38
+  become: yes
+ 
+  tasks:
+    - name: creates physical volume
+      shell: pvcreate /dev/xvdf /dev/xvdg
+
+    - name: create volume group
+      shell: vgcreate test-lvm /dev/xvdf /dev/xvdg
+
+    - name: create logical volume
+      shell: lvcreate -l 500 test-lvm -n new-vol1
+
+    - name: create filesystem
+      shell: mkfs -t ext3 /dev/test-lvm/new-vol1
+ 
+    - name: make directory
+      shell: mkdir /mnt/lvm1
+
+    - name: mount directory
+      shell: mount -t ext3 /dev/test-lvm/new-vol1 /mnt/lvm1

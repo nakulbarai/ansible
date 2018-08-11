@@ -1,0 +1,9 @@
+---
+- hosts: 172.31.5.38
+  tasks:
+   - name: check file exist or not
+     stat: path= /mnt/lvm
+     register: p
+   - name: create folder
+     shell: mkdir /mnt/lvm
+     when: p.stat.exists == True
