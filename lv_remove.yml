@@ -3,6 +3,11 @@
   become: yes
   become_method: sudo
   tasks:
+    - name: Deactivate a logical volume
+      lvol:
+           vg: test-lvm
+           lv: new-vol1
+           active: false
     - name: Remove the logical volume.
       lvol:
            vg: test-lvm
