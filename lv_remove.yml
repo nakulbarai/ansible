@@ -3,7 +3,7 @@
   become_method: sudo
   tasks:
     - name: remove logical colume      
-      shell: lvchange -an /dev/test-lvm/new-vol1
+      shell: sudo lvchange -an /dev/test-lvm/new-vol1
     - name: remove logical colume      
       shell: lvremove /dev/test-lvm/new-vol1
     - name: remove logical colume      
