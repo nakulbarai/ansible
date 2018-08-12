@@ -7,5 +7,5 @@
       lvol:
            vg: test-lvm
            lv: new-vol1
-        state: absent
-        force: yes
+           state: absent
+           force: yes
