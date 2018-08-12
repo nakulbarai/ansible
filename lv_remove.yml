@@ -3,6 +3,8 @@
   become: yes
   become_method: sudo
   tasks:
+    - name: unmount device
+      shell: umount /dev/test-lvm/new-vol1
     - name: Deactivate a logical volume
       lvol:
            vg: test-lvm
