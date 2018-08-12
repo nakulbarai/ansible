@@ -1,14 +1,16 @@
 ---
 - hosts: 172.31.7.165
+  become=yes
+  become_method=sudo
   tasks:
     - name: remove logical colume      
-      shell: sudo lvchange -an /dev/test-lvm/new-vol1
+      shell: lvchange -an /dev/test-lvm/new-vol1
     - name: remove logical colume      
-      shell: sudo lvremove /dev/test-lvm/new-vol1
+      shell: lvremove /dev/test-lvm/new-vol1
     - name: remove logical colume      
-      shell: sudo vgremove test-lvm
+      shell: vgremove test-lvm
     - name: remove logical colume
-      shell: sudo pvremove /dev/xvdf /dev/xvdg
+      shell: pvremove /dev/xvdf /dev/xvdg
     - name: remove logical colume
       shell: umount -a /mnt/lvm1
     - name: remove logical colume
