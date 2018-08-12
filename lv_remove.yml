@@ -3,6 +3,25 @@
   become: yes
   become_method: sudo
   tasks:
+    - name: Unmount directory
+      shell: umount /dev/test-lvm/new-vol1
+      
+    - name: remove directory
+      shell: rm -rf /mnt/lvm
+    
+    - name: Deactivate a logical volume
+      lvol:
+           vg: test-lvm
+           lv: new-vol1
+           active: false
+           
+    - name: Remove the logical volume.
+      lvol:
+           vg: test-lvm
+           lv: new-vol1
+           state: absent
+           force: yes
+           
     - name: Remove the volume group.
       lvg:
         vg: test-lvm
