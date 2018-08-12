@@ -1,5 +1,5 @@
 ---
-- hosts: 172.31.5.38
+- hosts: 172.31.7.165
   tasks:
     - name: remove logical colume      
       shell: lvchange -an /dev/test-lvm/new-vol1
