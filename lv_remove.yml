@@ -1,6 +1,6 @@
 ---
 - hosts: 172.31.7.165
-  become=yes
+  become: yes
   tasks:
     - name: remove logical colume      
       shell: lvchange -an /dev/test-lvm/new-vol1
