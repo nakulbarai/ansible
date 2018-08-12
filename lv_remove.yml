@@ -2,14 +2,14 @@
 - hosts: 172.31.5.38
   tasks:
     - name: remove logical colume      
-      shell: sudo lvchange -an /dev/test-lvm/new-vol1
+      shell: lvchange -an /dev/test-lvm/new-vol1
     - name: remove logical colume      
-      shell: sudo lvremove /dev/test-lvm/new-vol1
+      shell: lvremove /dev/test-lvm/new-vol1
     - name: remove logical colume      
-      shell: sudo vgremove test-lvm
+      shell: vgremove test-lvm
     - name: remove logical colume
-      shell: sudo pvremove /dev/xvdf /dev/xvdg
+      shell: pvremove /dev/xvdf /dev/xvdg
     - name: remove logical colume
-      shell: sudo umount -a /mnt/lvm1
+      shell: umount -a /mnt/lvm1
     - name: remove logical colume
-      shell: sudo rm -rf /mnt/lvm1
+      shell: rm -rf /mnt/lvm1
