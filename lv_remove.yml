@@ -3,16 +3,10 @@
   become: yes
   become_method: sudo
   tasks:
-    - name: unmount device
-      shell: umount /dev/test-lvm/new-vol1
-    - name: Deactivate a logical volume
-      lvol:
-           vg: test-lvm
-           lv: new-vol1
-           active: false
-    - name: Remove the logical volume.
-      lvol:
-           vg: test-lvm
-           lv: new-vol1
-           state: absent
-           force: yes
+    - name: Remove the volume group.
+      lvg:
+        vg: test-lvm
+        state: absent
+
+    - name: Remove the PV volume group.
+      shell: pvremove /dev/xvdf /dev/xvdg
