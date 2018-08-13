@@ -12,7 +12,7 @@
        lovl:
             vg: test-lvm
             lv: new-vol1
-            size:500m
+            size: 500
      - name: Create Directory
        file:
             path: /mnt/lvm1
