@@ -8,11 +8,12 @@
        lvg:
            vg: test-lvm
            pvs: /dev/xvdf /dev/xvdg
-           pesize: 500
+       
      - name: create LV
        lovl:
             vg: test-lvm
             lv: new-vol1
+            size: 500M
      - name: Create Directory
        file:
             path: /mnt/lvm1
