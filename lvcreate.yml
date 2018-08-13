@@ -1,24 +1,31 @@
 ---
-- hosts: 172.31.7.4
-  user: root
+- hosts: 172.31.7.165
+  become: yes
+  become_method: sudo
+ 
   tasks:
-  - name: vgcreate
-     lvg:
-            vg: vgdata
-            pvs: /dev/xvdf, /dev/xvdg
+     - name: creates logical and physical volume
+       lvg:
+           vg: test-lvm
+           pvs: /dev/xvdf /dev/xvdg
+           pesize: 500
+     
+     - name: create LV
+       lovl:
+            vg: test-lvm
+            lv: new-vol1
+            
+      - name: create directory
+        file:
+            path: /mnt/lvm1
+            state: directory
 
-  - name: create LV
-    lovl:
-            vg: vgdata
-            lv: dataone
-
-  - name: create file system
-    filesystem:
+      - name: create file system
+        filesystem:
             fstype: ext3
-            dev: /dev/vgdata/dataone
-
-
-  - name: mount logical volume
-    mount:
-             name: /lvdata
-             src: /dev/vgdata/dataone
+            dev: /dev/test-lvm/new-vol1
+            
+      - name: mount logical volume
+        mount:
+            name: /mnt/lvm1
+            src: /dev/test-lvm/new-vol1
