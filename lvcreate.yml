@@ -10,6 +10,7 @@
            lv: new-vol1
            pvs: /dev/xvdf,/dev/xvdg
            size: 500
+           state: present
     - name: Create Directory
       file:
            path: /mnt/lvm1
