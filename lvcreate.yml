@@ -15,8 +15,7 @@
             vg: test-lvm
             lv: new-vol1
             
-      - name: create directory
-        file:
+      - file:
             path: /mnt/lvm1
             state: directory
 
