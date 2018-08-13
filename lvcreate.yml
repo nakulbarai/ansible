@@ -4,6 +4,12 @@
   become_method: sudo
  
   tasks:
+    - name: Create a logical volume of 512m with disks /dev/sda and /dev/sdb
+      lvol:
+           vg: firefly
+           lv: test
+           size: 512
+           pvs: /dev/xvdf,/dev/xvdg
     - name: Create Directory
       file:
            path: /mnt/lvm1
