@@ -27,3 +27,4 @@
       mount:
            name: /mnt/lvm1
            src: /dev/test-lvm/new-vol1
+           state: present
