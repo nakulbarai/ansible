@@ -9,7 +9,7 @@
            vg: test-lvm
            pvs: /dev/xvdf /dev/xvdg
       
-      - name: create LV
+     - name: create LV
        lovl:
             vg: test-lvm
             lv: new-vol1
