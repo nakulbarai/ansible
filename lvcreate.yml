@@ -3,7 +3,29 @@
   become: yes
   become_method: sudo
  
-  tasks:           
+  tasks:
+    - name: Create or resize a volume group on top of /dev/xvdf and /dev/xvdg
+      lvg:
+          vg: test-lvm
+          pvs: /dev/xvdf,/dev/xvdg
+       
+    - name: Create a logical volume of 512m with disks /dev/sda and /dev/sdb
+      lvol:
+          vg: test-lvm
+          lv: new-vol1
+          size: 512
+          pvs: /dev/xvdf,/dev/xvdg
+       
+    - name: Create Directory
+      file:
+          path: /mnt/lvm1
+          state: directory
+       
+    - name: create file system
+      filesystem:
+          fstype: ext3
+          dev: /dev/test-lvm/new-vol1
+    
     - name: mount logical volume
       mount:
            name: /mnt/lvm1
