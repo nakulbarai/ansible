@@ -3,9 +3,6 @@
   become: yes
   become_method: sudo
   tasks:
-    - name: Unmount directory
-      shell: umount /dev/test-lvm/new-vol1
-      
     - name: remove directory
       shell: rm -rf /mnt/lvm
     
