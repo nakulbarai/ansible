@@ -7,7 +7,7 @@
      - name: creates logical and physical volume
        lvg:
            vg: test-lvm
-           pvs: /dev/xvdf /dev/xvdg
+           pvs: /dev/xvdf,/dev/xvdg
      - name: create LV
        lovl:
             vg: test-lvm
