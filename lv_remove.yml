@@ -3,8 +3,11 @@
   become: yes
   become_method: sudo
   tasks:
-    - name: remove directory
-      shell: rm -rf /mnt/lvm
+    - file:
+           path: /mnt/lvm1
+           state: directory
+           state: absent
+           
     
     - name: Deactivate a logical volume
       lvol:
