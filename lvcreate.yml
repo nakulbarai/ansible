@@ -9,22 +9,18 @@
            vg: test-lvm
            pvs: /dev/xvdf /dev/xvdg
            pesize: 500
-     
      - name: create LV
        lovl:
             vg: test-lvm
             lv: new-vol1
-            
      - name: Create Directory
        file:
             path: /mnt/lvm1
             state: directory
-
      - name: create file system
        filesystem:
             fstype: ext3
             dev: /dev/test-lvm/new-vol1
-            
      - name: mount logical volume
        mount:
             name: /mnt/lvm1
