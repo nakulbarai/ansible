@@ -2,7 +2,7 @@
 - hosts: 172.31.7.165
   become: yes
   become_method: sudo
-   tasks:
+  tasks:
     - name: Create or resize a volume group on top of /dev/xvdf and /dev/xvdg
       lvg:
           vg: {{vg_name}}
