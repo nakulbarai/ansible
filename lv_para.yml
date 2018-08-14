@@ -6,6 +6,23 @@
        vg_name: test-lvm
        lv_name: new-vol1
   tasks:
+    - name: Create or resize a volume group on top of /dev/xvdf and /dev/xvdg
+      lvg:
+          vg: "{{vg_name}}"
+          pvs: /dev/xvdf,/dev/xvdg
+
+    - name: Create a logical volume of 512m with disks /dev/sda and /dev/sdb
+      lvol:
+          vg: "{{vg_name}}"
+          lv: "{{lv_name}}"
+          size: 512
+          pvs: /dev/xvdf,/dev/xvdg
+
+    - name: Create Directory
+      file:
+          path: /mnt/lvm1
+          state: directory
+
     - name: create file system
       filesystem:
           fstype: ext3
