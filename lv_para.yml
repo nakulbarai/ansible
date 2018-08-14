@@ -2,16 +2,19 @@
 - hosts: 172.31.7.165
   become: yes
   become_method: sudo
+  vars:
+       vg_name: test-lvm
+       lv_name: new-vol1
   tasks:
     - name: Create or resize a volume group on top of /dev/xvdf and /dev/xvdg
       lvg:
-          vg: {{vg_name}}
+          vg: "{{vg_name}}"
           pvs: /dev/xvdf,/dev/xvdg
 
     - name: Create a logical volume of 512m with disks /dev/sda and /dev/sdb
       lvol:
-          vg: {{vg_name}}
-          lv: {{lv_name}}
+          vg: "{{vg_name}}"
+          lv: "{{lv_name}}"
           size: 512
           pvs: /dev/xvdf,/dev/xvdg
 
@@ -23,11 +26,11 @@
     - name: create file system
       filesystem:
           fstype: ext3
-          dev: /dev/{{vg_name}}/{{lv_name}}
+          dev: /dev/"{{vg_name}}"/"{{lv_name}}"
 
     - name: mount logical volume
       mount:
            name: /mnt/lvm1
-           src: /dev/{{vg_name}}/{{lv_name}}
+           src: /dev/"{{vg_name}}"/"{{lv_name}}"
            fstype: ext3
            state: present
