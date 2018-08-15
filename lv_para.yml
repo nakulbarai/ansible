@@ -17,17 +17,17 @@
 
     - name: Create Directory
       file:
-          path: /mnt/lvm1
+          path: "{{directoy_path}}"
           state: directory
 
     - name: create file system
       filesystem:
-          fstype: ext3
+          fstype: ext4
           dev: /dev/{{vg_name}}/{{lv_name}}
 
     - name: mount logical volume
       mount:
-           name: /mnt/lvm1
+           name: "{{directoy_path}}"
            src: /dev/{{vg_name}}/{{lv_name}}
-           fstype: ext3
+           fstype: ext4
            state: present
