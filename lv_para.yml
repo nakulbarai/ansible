@@ -8,7 +8,7 @@
           vg: "{{vg_name}}"
           pvs: /dev/xvdf,/dev/xvdg
 
-    - name: Create a logical volume of 512m with disks /dev/sda and /dev/sdb
+    - name: Create a logical volume of with disks /dev/sda and /dev/sdb
       lvol:
           vg: "{{vg_name}}"
           lv: "{{lv_name}}"
