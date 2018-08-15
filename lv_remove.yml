@@ -6,7 +6,7 @@
     - name: unmount logical volume
       mount:
            name: /mnt/lvm1
-           src: /dev/{{vg_name}}/{{lv_name}}
+           src: /dev/test-lvm/new-vol1
            fstype: ext3
            state: absent
     - file:
