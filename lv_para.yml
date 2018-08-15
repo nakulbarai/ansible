@@ -17,7 +17,7 @@
 
     - name: Create Directory
       file:
-          path: "{{directoy_path}}"
+          path: "{{dir_path}}"
           state: directory
 
     - name: create file system
@@ -27,7 +27,7 @@
 
     - name: mount logical volume
       mount:
-           name: "{{directoy_path}}"
+           name: "{{dir_path}}"
            src: /dev/{{vg_name}}/{{lv_name}}
            fstype: ext4
            state: present
