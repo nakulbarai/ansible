@@ -12,7 +12,7 @@
       lvol:
           vg: "{{vg_name}}"
           lv: "{{lv_name}}"
-          size: {{vol_size}}
+          size: "{{vol_size}}"
           pvs: /dev/xvdf,/dev/xvdg
 
     - name: Create Directory
