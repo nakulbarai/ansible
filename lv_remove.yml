@@ -3,6 +3,12 @@
   become: yes
   become_method: sudo
   tasks:
+    - name: unmount logical volume
+      mount:
+           name: /mnt/lvm1
+           src: /dev/{{vg_name}}/{{lv_name}}
+           fstype: ext3
+           state: absent
     - file:
            path: /mnt/lvm1
            state: directory
