@@ -31,4 +31,4 @@
            name: /mnt/lvm1
            src: /dev/test-lvm/new-vol1
            fstype: ext3
-           state: present
+           state: present 
