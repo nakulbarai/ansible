@@ -34,4 +34,4 @@
         state: absent
 
     - name: Remove the PV volume group.
-      shell: pvremove /dev/xvdf /dev/xvdg
+      shell: pvremove /dev/xvdf /dev/xvdg 
