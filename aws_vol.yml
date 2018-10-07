@@ -2,6 +2,7 @@
 - hosts: localhost
   connection: local
   gather_facts: False
+  region: us-east-1
 
   tasks:
       - ec2_vol:
