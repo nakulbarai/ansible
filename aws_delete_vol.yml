@@ -6,5 +6,6 @@
    - name: Detach volume
      ec2_vol:
         id: vol-0a88f124109998314
+        zone: us-east-1
         instance: None
         state: absent
