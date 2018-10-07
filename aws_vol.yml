@@ -1,5 +1,10 @@
 ---
-tasks:
-  - ec2_vol:
-       volume_size: 5
-       device_name: sdd
+- hosts: 10.243.101.191
+  become: yes
+  become_method: sudo
+ 
+  tasks:
+      - ec2_vol:
+            volume_size: 5
+            device_name: sdd
+  
