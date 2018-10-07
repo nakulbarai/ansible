@@ -5,6 +5,7 @@
 
   tasks:
       - ec2_vol:
+            region: us-east-1
             volume_size: 5
             device_name: sdd
   
