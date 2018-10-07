@@ -21,7 +21,7 @@
         region: us-east-1
         instance: None
         
-   - name: Delete first volume 
+   - name: Delete second volume 
      ec2_vol:
         id: vol-00ceb802bed27f567
         region: us-east-1
