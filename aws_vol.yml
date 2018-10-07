@@ -4,7 +4,7 @@
   
 
   tasks:
-      -name: create first volume 
+     - name: create first volume 
        ec2_vol:
            instance: i-0d63ef881ed61f597
            region: us-east-1
@@ -12,7 +12,7 @@
            volume_size: 1
            volume_type: gp2
            
-      -name: create second volume 
+     - name: create second volume 
        ec2_vol:
            instance: i-0d63ef881ed61f597
            region: us-east-1
