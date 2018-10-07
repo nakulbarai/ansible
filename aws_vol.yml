@@ -1,10 +1,12 @@
 ---
 - hosts: localhost
-  region: us-east-1
+  
 
   tasks:
       - ec2_vol:
            instance: i-0d63ef881ed61f597
+           region: us-east-1
+           zone: us-east-1
            volume_size: 5
            volume_type: gp2
            device_name: /dev/xvdf
