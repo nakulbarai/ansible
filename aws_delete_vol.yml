@@ -5,12 +5,12 @@
   tasks:
    - name: Detach volume
      ec2_vol:
-        id: vol-0a88f124109998314
+        id: vol-0dc8562c4a614a5d8, vol-00ceb802bed27f567
         region: us-east-1
         instance: None
       
    - name: Delete volume 
      ec2_vol:
-        id: vol-0a88f124109998314
+        id: vol-0dc8562c4a614a5d8, vol-00ceb802bed27f567
         region: us-east-1
         state: absent
