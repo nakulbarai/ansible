@@ -1,4 +1,8 @@
 ---
+- hosts: localhost
+  connection: local
+  gather_facts: False
+
  tasks:
       - ec2_vol:
             volume_size: 5
