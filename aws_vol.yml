@@ -11,6 +11,7 @@
            zone: us-east-1
            volume_size: 1
            volume_type: gp2
+           device_name: /dev/xvdf
            
      - name: create second volume 
        ec2_vol:
@@ -19,5 +20,6 @@
            zone: us-east-1
            volume_size: 1
            volume_type: gp2
+           device_name: /dev/xvdg
   
  
