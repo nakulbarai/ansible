@@ -5,8 +5,10 @@
 
   tasks:
       - ec2_vol:
-            ec2_region_name = us-east-1
-            volume_size: 5
-            device_name: sdd
+           instance: i-0d63ef881ed61f597
+           volume_size: 5
+           volume_type: gp2
+           device_name: /dev/xvdf
+
   
  
