@@ -1,4 +1,5 @@
 ---
-- ec2_vol:
-    volume_size: 5
-    device_name: sdd
+tasks:
+  - ec2_vol:
+       volume_size: 5
+       device_name: sdd
