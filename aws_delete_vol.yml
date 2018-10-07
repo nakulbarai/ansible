@@ -1,7 +1,8 @@
 ---
 - hosts: localhost
+  gather_facts: False
  
-  task:
+  tasks:
    - name: Detach volume
      ec2_vol:
         id: vol-0a88f124109998314
