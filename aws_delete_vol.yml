@@ -15,14 +15,14 @@
         region: us-east-1
         state: absent
       
-    - name: Detach second volume
-      ec2_vol:
+   - name: Detach second volume
+     ec2_vol:
         id: vol-00ceb802bed27f567
         region: us-east-1
         instance: None
         
-     - name: Delete first volume 
-       ec2_vol:
+   - name: Delete first volume 
+     ec2_vol:
         id: /vol-00ceb802bed27f567
         region: us-east-1
         state: absent
