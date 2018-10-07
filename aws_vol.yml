@@ -1,15 +1,23 @@
 ---
 - hosts: localhost
+  gather_facts: False
   
 
   tasks:
-      - ec2_vol:
+      -name: create first volume 
+       ec2_vol:
            instance: i-0d63ef881ed61f597
            region: us-east-1
            zone: us-east-1
-           volume_size: 5
+           volume_size: 1
            volume_type: gp2
-           device_name: /dev/xvdf
-
+           
+      -name: create first volume 
+       ec2_vol:
+           instance: i-0d63ef881ed61f597
+           region: us-east-1
+           zone: us-east-1
+           volume_size: 1
+           volume_type: gp2
   
  
