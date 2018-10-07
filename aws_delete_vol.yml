@@ -3,8 +3,8 @@
   gather_facts: False
  
   task:
-  - name: Detach volume
-    ec2_vol:
+   - name: Detach volume
+     ec2_vol:
         id: vol-0a88f124109998314
         instance: None
         state: absent
