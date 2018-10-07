@@ -23,6 +23,6 @@
         
    - name: Delete first volume 
      ec2_vol:
-        id: /vol-00ceb802bed27f567
+        id: vol-00ceb802bed27f567
         region: us-east-1
         state: absent
