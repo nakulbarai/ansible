@@ -1,0 +1,4 @@
+- ec2_vol:
+    instance: XXXXXX
+    volume_size: 5
+    device_name: sdd
