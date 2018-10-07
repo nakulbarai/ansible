@@ -3,14 +3,26 @@
   gather_facts: False
  
   tasks:
-   - name: Detach volume
+   - name: Detach first volume
      ec2_vol:
-        id: ['vol-0dc8562c4a614a5d8','vol-00ceb802bed27f567']
+        id: vol-0dc8562c4a614a5d8 
         region: us-east-1
         instance: None
       
-   - name: Delete volume 
+   - name: Delete first volume 
      ec2_vol:
-        id: ['vol-0dc8562c4a614a5d8','vol-00ceb802bed27f567']
+        id: vol-0dc8562c4a614a5d8 
+        region: us-east-1
+        state: absent
+      
+    - name: Detach second volume
+      ec2_vol:
+        id: vol-00ceb802bed27f567
+        region: us-east-1
+        instance: None
+        
+     - name: Delete first volume 
+       ec2_vol:
+        id: /vol-00ceb802bed27f567
         region: us-east-1
         state: absent
