@@ -1,5 +1,5 @@
 ---
-- hosts: All
+- hosts: 10.243.101.191
   become: yes
   become_method: sudo
   
