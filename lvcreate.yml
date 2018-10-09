@@ -1,5 +1,6 @@
 ---
-- become: yes
+- hosts: ansible-volume-test
+  become: yes
   become_method: sudo
  
   tasks:
