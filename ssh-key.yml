@@ -1,6 +1,7 @@
 ---
 - hosts: 10.243.101.191
-  gather_facts: False
+  become: yes
+  become_method: sudo
   
   tasks:
     - name: Set authorized keys taken from url
