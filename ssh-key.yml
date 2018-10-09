@@ -7,5 +7,5 @@
       authorized_key:
                 user: charlie
                 state: present
-                key: https://github.com/charlie.keys
+                key: https://github.com/nakulbarai/key/blob/master/id_rsa.pub
 
