@@ -1,5 +1,5 @@
 ---
-- hosts: ansible-volume-test
+- hosts: localhost
   become: yes
   become_method: sudo
  
