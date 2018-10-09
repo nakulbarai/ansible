@@ -4,3 +4,4 @@
     user: charlie
     state: present
     key: https://github.com/charlie.keys
+
