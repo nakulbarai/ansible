@@ -1,6 +1,6 @@
 ---
 - hosts: all
-  no_log: True
+  no_log: False
   remote_user: tivo
   become: yes
   become_method: su
