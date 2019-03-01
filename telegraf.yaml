@@ -5,10 +5,11 @@
   become: yes
   become_method: su
   tasks:
-    - name: Copy telegraf package to remote server
-      copy:
-       src: https://dl.influxdata.com/telegraf/releases/telegraf-1.5.3-1.x86_64.rpm 
-       dest: /var/tmp/telegraf-1.5.3-1.x86_64.rpm
+ #   - name: Copy telegraf package to remote server
+  #    copy:
+   #    src: https://dl.influxdata.com/telegraf/releases/telegraf-1.5.3-1.x86_64.rpm 
+   #    dest: /var/tmp/telegraf-1.5.3-1.x86_64.rpm
+   #    remo
 
     - name: install telegraf from local file
       yum:
