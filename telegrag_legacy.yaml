@@ -1,7 +1,9 @@
 ---
-- name: control remote legacy system
-  hosts: legacy
-  gather_facts: no
+- hosts: all
+  no_log: False
+  remote_user: tivo
+  become: yes
+  become_method: su
 
   tasks:
   - name: create script on the fly to manage system
