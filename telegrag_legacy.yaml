@@ -13,4 +13,3 @@
   - name: execute raw command to upgrade system
     raw:
       rpm -Uvh /var/tmp/telegraf-1.5.3-1.x86_64.rpm
-    become: yes 
