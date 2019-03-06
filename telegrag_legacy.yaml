@@ -2,7 +2,6 @@
 - hosts: all
   no_log: False
   remote_user: tivo
-  become: yes
 
   tasks:
   - name: create script on the fly to manage system
