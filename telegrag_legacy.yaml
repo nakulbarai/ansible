@@ -8,4 +8,4 @@
   - name: create script on the fly to manage system
     template:
       src: /var/tmp/telegraf-1.5.3-1.x86_64.rpm
-      dest: "/var/tmp/telegraf-1.5.3-1.x86_64.rpm”
+      dest: /var/tmp/telegraf-1.5.3-1.x86_64.rpm
