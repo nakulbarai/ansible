@@ -5,7 +5,5 @@
   remote_user: tivo
 
   tasks:
-  - name: create script on the fly to manage system
-    copy:
-      src: /var/tmp/telegraf-1.5.3-1.x86_64.rpm
-      dest: /var/tmp/telegraf-1.5.3-1.x86_64.rpm
+  - name: execute raw command to upgrade system
+    raw:uname -n
