@@ -6,4 +6,4 @@
 
   tasks:
   - name: execute raw command to upgrade system
-    raw:uname -n
+    raw: uname -n
