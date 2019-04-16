@@ -2,9 +2,6 @@
 - hosts: all
   gather_facts: False
   
-  tasks:
-  - name: execute raw command to upgrade system
-    raw: scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm {{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
-  
+  tasks:  
   - name: local scp
-    local_action: command scp /path/to/localfile {{ inventory_hostname }}:/path/to/remotefile
+    local_action: command scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm {{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
