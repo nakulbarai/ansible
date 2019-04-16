@@ -8,4 +8,4 @@
   
   tasks:
   - name: execute raw command to upgrade system
-    raw: scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm /var/tmp/telegraf-1.5.3-1.x86_64.rpm
+    raw: scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm {{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
