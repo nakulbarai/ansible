@@ -6,4 +6,4 @@
 
   tasks:
   - name: execute raw command to upgrade system
-    command: uname -n
+    command: uptime
