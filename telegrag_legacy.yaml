@@ -1,8 +1,6 @@
 ---
 - hosts: all
   gather_facts: False
-  no_log: False
-  remote_user: tivo
 
   tasks:
   - name: execute raw command to upgrade system
