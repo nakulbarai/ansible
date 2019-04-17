@@ -4,4 +4,4 @@
   
   tasks:  
   - name: local scp
-    local_action: command scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm {{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
+    local_action: command sudo scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm {{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
