@@ -1,7 +1,8 @@
 ---
 - hosts: all
+  become: yes
   gather_facts: False
   
   tasks:  
   - name: local scp
-    local_action: command scp -i /var/tmp/test.pem /var/tmp/telegraf-1.5.3-1.x86_64.rpm tivo@{{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
+    raw: scp -i /var/tmp/test.pem /var/tmp/telegraf-1.5.3-1.x86_64.rpm tivo@{{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
