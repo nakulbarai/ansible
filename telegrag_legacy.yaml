@@ -1,6 +1,8 @@
 ---
 - hosts: all
   gather_facts: False
+  become: yes
+  become_method: su
   
   tasks:  
   - name: local scp
@@ -8,7 +10,5 @@
  #   raw: scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm tivo@{{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
   - name: Installed packages.
     raw: command /usr/bin/yum --nogpgcheck localinstall -y /var/tmp/telegraf-1.5.3-1.x86_64.rpm
-    become: yes
-    become_user: tivo
-    become_method: su
+    
     
