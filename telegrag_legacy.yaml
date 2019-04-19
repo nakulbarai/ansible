@@ -4,5 +4,5 @@
   
   tasks:  
   - name: local scp
-    raw: command scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm {{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
+    raw: command scp anstow01.sj.tivo.com:/var/tmp/telegraf-1.5.3-1.x86_64.rpm /var/tmp/telegraf-1.5.3-1.x86_64.rpm
  #   raw: scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm tivo@{{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
