@@ -7,3 +7,4 @@
   tasks:  
   - name: local scp
     raw: command scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm {{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
+    become: true
