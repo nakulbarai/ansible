@@ -1,6 +1,5 @@
 ---
 - hosts: all
-  become
   gather_facts: False
   
   tasks:  
