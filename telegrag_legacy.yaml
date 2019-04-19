@@ -9,5 +9,6 @@
   - name: Installed packages.
     raw: command /usr/bin/yum --nogpgcheck localinstall -y /var/tmp/telegraf-1.5.3-1.x86_64.rpm
     become: yes
-    become_method: sudo
+    become_user: tivo
+    become_method: su
     
