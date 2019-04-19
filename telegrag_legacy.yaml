@@ -6,5 +6,7 @@
   - name: local scp
     local_action: command scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm tivo@{{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
  #   raw: scp /var/tmp/telegraf-1.5.3-1.x86_64.rpm tivo@{{ inventory_hostname }}:/var/tmp/telegraf-1.5.3-1.x86_64.rpm
-  - name: Install Telegraf 
-    raw: command rpm -ivh /var/tmp/telegraf-1.5.3-1.x86_64.rpm
+  - name: Installed packages.
+    command: /usr/bin/yum --nogpgcheck localinstall -y {{item}}
+    with_items:
+           - /var/tmp/telegraf-1.5.3-1.x86_64.rpm
