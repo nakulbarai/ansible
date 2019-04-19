@@ -1,7 +1,6 @@
 ---
 - hosts: all
   become: yes
-  become_method: sudo
   gather_facts: False
   
   tasks:  
