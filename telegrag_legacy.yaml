@@ -1,7 +1,7 @@
 ---
 - hosts: all
   become: yes
-  become_method: su
+  become_user: tivo
   gather_facts: False
   
   tasks:  
